@@ -27,7 +27,7 @@ function BlogPosts({ data }) {
 						</div>
 						<div className="col col2">
 							<div className="in_col article_wrap">
-								<div class="ctgry_blk blk">
+								<div className="ctgry_blk blk">
 									<h4 className="color">{data.category.title}</h4>
 									<ul>
 										{data.category.ul.map((val) => {

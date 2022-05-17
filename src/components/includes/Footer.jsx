@@ -19,21 +19,16 @@ function Footer() {
 			},
 			{
 				id: 3,
-				text: "Solutions",
-				link: "/solutions",
-			},
-			{
-				id: 4,
 				text: "FAQ’s",
 				link: "/faq",
 			},
 			{
-				id: 5,
+				id: 4,
 				text: "Blog Posts",
 				link: "/blog",
 			},
 			{
-				id: 6,
+				id: 5,
 				text: "Contact us",
 				link: "/contact",
 			},

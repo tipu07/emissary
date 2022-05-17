@@ -434,6 +434,11 @@ footer {
 		> .col3 {
 			width: 34%;
 		}
+		@include ipad_sm {
+			> .col {
+				width: 100%;
+			}
+		}
 	}
 	.list {
 		@include list;
@@ -502,6 +507,11 @@ footer {
 		@include list;
 		@include flex($flow: wrap);
 		margin: 0 -1.5rem;
+		@include ipad_sm {
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
 		> li {
 			padding: 0 1.5rem;
 		}
@@ -509,8 +519,18 @@ footer {
 	.copyright {
 		@include flex(center, space-between);
 		margin-top: 1rem;
+		@include ipad_sm {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-flow: column;
+			flex-flow: column;
+			text-align: center;
+		}
 		p {
 			margin: 0;
+			@include ipad_sm {
+				margin: 0 0 1rem;
+			}
 		}
 	}
 }
@@ -585,7 +605,7 @@ footer {
 			text-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.3);
 			// text-transform: uppercase;
 			@include ipad_sm {
-				font-size: 4.8rem;
+				font-size: 6rem;
 			}
 			@include mobile_md {
 				font-size: 4rem;
@@ -604,6 +624,7 @@ footer {
 			text-shadow: 0.5rem 0.5rem 0.5rem rgba($black, 0.2);
 			@include mobile_md {
 				font-size: 1.6rem;
+				padding: 0;
 			}
 		}
 	}
@@ -627,6 +648,9 @@ footer {
 		-webkit-box-pack: center;
 		-ms-flex-pack: center;
 		justify-content: center;
+		@include ipad {
+			@include slider;
+		}
 		> li {
 			display: block;
 			-webkit-box-flex: 1;
@@ -675,10 +699,18 @@ footer {
 		> .col2 {
 			width: 68%;
 		}
+		@include ipad {
+			> .col {
+				width: 100%;
+			}
+		}
 	}
 	.sub_row {
 		> .col {
 			width: 33.3334%;
+			@include mobile {
+				width: 100%;
+			}
 		}
 	}
 	.txt {
@@ -702,6 +734,9 @@ footer {
 	.main_row {
 		> .col {
 			width: 50%;
+			@include ipad_sm {
+				width: 100%;
+			}
 		}
 	}
 	.inner {
@@ -861,6 +896,9 @@ footer {
 	.main_row {
 		> .col {
 			width: 33.3334%;
+			@include ipad_sm {
+				width: 100%;
+			}
 		}
 	}
 	.content {
@@ -1529,6 +1567,30 @@ footer {
 
 /*
 |----------------------------------------------------------------------
+|       Jobs 
+|----------------------------------------------------------------------
+*/
+
+#jobs {
+	.filter_wrapper_col {
+		@include ipad {
+			padding: 0;
+		}
+	}
+	#filter_btn_blk {
+		display: none;
+		@include pos($t: null, $pos: sticky, $z: 10);
+		background: $light;
+		padding: 1.5rem;
+		margin: 1.5rem -1.5rem -1.5rem;
+		@include ipad {
+			@include flex;
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
 |       Dashboard
 |----------------------------------------------------------------------
 */
@@ -1564,6 +1626,9 @@ footer {
 	}
 	> .top {
 		@include flex;
+		@include mobile_md {
+			display: block;
+		}
 		.ico {
 			width: 6rem;
 			min-width: 6rem;
@@ -1571,6 +1636,9 @@ footer {
 			margin-right: 2rem;
 			border-radius: 1rem;
 			overflow: hidden;
+			@include mobile_md {
+				display: none;
+			}
 		}
 		.title {
 			-webkit-box-flex: 1;
@@ -1578,6 +1646,9 @@ footer {
 			flex: 1;
 			-ms-flex-item-align: center;
 			align-self: center;
+			@include mobile_md {
+				margin-bottom: 1rem;
+			}
 			.company {
 				a {
 					color: $color;

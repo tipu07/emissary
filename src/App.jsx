@@ -8,7 +8,6 @@ import Footer from "./components/includes/Footer";
 import Home from "./components/pages/home/Index";
 import About from "./components/pages/about/Index";
 import Jobs from "./components/pages/jobs/Index";
-import Solutions from "./components/pages/solutions/Index";
 import Blog from "./components/pages/blog/Index";
 import BlogDetail from "./components/pages/blog_detail/Index";
 import Contact from "./components/pages/contact/Index";
@@ -17,18 +16,6 @@ import Pricing from "./components/pages/pricing/Index";
 import Privacy from "./components/pages/privacy/Index";
 import Disclaim from "./components/pages/disclaimer/Index";
 import Terms from "./components/pages/terms/Index";
-
-// Logon Pages
-import SignIn from "./components/pages/signin/Index";
-import SignUp from "./components/pages/signup/Index";
-import Forgot from "./components/pages/forgot/Index";
-import Reset from "./components/pages/reset/Index";
-
-// Account Pages
-import Dashboard from "./components/pages/dashboard/Index";
-import Profile from "./components/pages/profile/Index";
-import Transactions from "./components/pages/transactions/Index";
-import Packages from "./components/pages/packages/Index";
 
 // Error Pages & Popups
 import Error from "./components/pages/error/Index";
@@ -51,13 +38,6 @@ function App() {
 			<Footer />
 		</>
 	);
-	const PageLogLayout = () => (
-		<>
-			<Header logged={true} />
-			<Outlet />
-			<Footer />
-		</>
-	);
 	return (
 		<>
 			<BrowserRouter>
@@ -70,7 +50,6 @@ function App() {
 						{/* <Route exact path="/services/service-detail" element={<ServiceDetail />} /> */}
 						<Route exact path="/blog" element={<Blog />} />
 						<Route exact path="/jobs" element={<Jobs />} />
-						<Route exact path="/solutions" element={<Solutions />} />
 						<Route exact path="/blog/blog-detail" element={<BlogDetail />} />
 						<Route exact path="/contact" element={<Contact />} />
 						<Route exact path="/faq" element={<Faq />} />
@@ -78,17 +57,6 @@ function App() {
 						<Route exact path="/privacy-policy" element={<Privacy />} />
 						<Route exact path="/disclaimer" element={<Disclaim />} />
 						<Route exact path="/terms-conditions" element={<Terms />} />
-
-						<Route exact path="/signin" element={<SignIn />} />
-						<Route exact path="/signup" element={<SignUp />} />
-						<Route exact path="/forgot-password" element={<Forgot />} />
-						<Route exact path="/reset-password" element={<Reset />} />
-					</Route>
-					<Route element={<PageLogLayout />}>
-						<Route exact path="/dashboard" element={<Dashboard />} />
-						<Route exact path="/profile-settings" element={<Profile />} />
-						<Route exact path="/transactions" element={<Transactions />} />
-						<Route exact path="/mine-packages" element={<Packages />} />
 					</Route>
 					<Route path="*" element={<Error />} />
 				</Routes>
